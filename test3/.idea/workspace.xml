@@ -14,8 +14,6 @@
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/WEB-INF/classes/META-INF/test3.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/WEB-INF/classes/com/user/Servlet/LoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/WEB-INF/classes/com/user/Servlet/RegisterServlet.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.38.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/WEB-INF/libs/mysql-connector-java-5.1.38.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/WEB-INF/web.xml" afterDir="false" />
@@ -40,12 +38,8 @@
       <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/js/my-login.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/login.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/out/artifacts/test3_war_exploded/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/user/Servlet/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/user/Servlet/RegisterServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/test3.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/WEB-INF/classes/META-INF/test3.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/user/Servlet/LoginServlet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/classes/com/user/Servlet/RegisterServlet.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/WEB-INF/libs/mysql-connector-java-5.1.38.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/web/bootstrap/css/bootstrap-grid.css" afterDir="false" />
@@ -82,6 +76,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -248,7 +243,7 @@
       <workItem from="1577512609035" duration="146000" />
       <workItem from="1577539434832" duration="8458000" />
       <workItem from="1577592411116" duration="7410000" />
-      <workItem from="1577624375588" duration="1486000" />
+      <workItem from="1577624375588" duration="5089000" />
     </task>
     <servers />
   </component>

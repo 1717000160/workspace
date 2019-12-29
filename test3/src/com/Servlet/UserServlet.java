@@ -1,6 +1,8 @@
 package com.Servlet;
 
+import com.Dao.AdminDao;
 import com.Dao.UserDao;
+import com.Model.Admin;
 import com.Model.Users;
 
 import javax.servlet.ServletException;
@@ -14,16 +16,35 @@ import java.io.IOException;
 public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String type = request.getParameter("Type");
-        int b = 5;
+
         if (type.equals("Login")) {
             String userName = request.getParameter("userName");
             String password = request.getParameter("password");
+            String isAdmin = request.getParameter("isAdmin");
+            if(isAdmin == null) isAdmin = "user";
+
             //用户名或密码为空时
             if (userName == null || password == null) {
                 request.getRequestDispatcher("login.html").forward(request, response);
             }
 
-            Users user = new Users(userName, password,"0");
+            if (isAdmin.equals("admin")) {
+                Admin user = new Admin(userName, password);
+                AdminDao Dao = new AdminDao();
+                boolean flag = false;
+                try {
+                    if (Dao.login(user)) flag = true;
+                    else flag = false;
+                    int a = 0;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                request.getSession().setAttribute("IsAdmin", flag);
+                request.getRequestDispatcher("admin.jsp").forward(request, response);
+            }
+
+            Users user = new Users(userName, password, "0");
             UserDao Dao = new UserDao();
             boolean flag = false;
             try {
@@ -37,7 +58,6 @@ public class UserServlet extends HttpServlet {
             request.getSession().setAttribute("IsValid", flag);
             request.getRequestDispatcher("index.jsp").forward(request, response);
 
-            int a = 0;
         }
         if (type.equals("Register")) {
             String userName = request.getParameter("name");
@@ -59,8 +79,6 @@ public class UserServlet extends HttpServlet {
             }
 
         }
-        int a = 9;
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -37,7 +37,6 @@ public class UserDao {
         list.add(user.getUserName());
         list.add(user.getPassword());
         list.add(user.getEmail());
-
         db.Update(sql, list);
 
     }
