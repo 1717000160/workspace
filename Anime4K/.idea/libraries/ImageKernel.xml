@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ImageKernel">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/src/ImageKernel" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
