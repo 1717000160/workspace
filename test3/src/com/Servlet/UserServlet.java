@@ -21,7 +21,7 @@ public class UserServlet extends HttpServlet {
             String userName = request.getParameter("userName");
             String password = request.getParameter("password");
             String isAdmin = request.getParameter("isAdmin");
-            if(isAdmin == null) isAdmin = "user";
+            if (isAdmin == null) isAdmin = "user";
 
             //用户名或密码为空时
             if (userName == null || password == null) {
@@ -54,9 +54,9 @@ public class UserServlet extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-            request.getSession().setAttribute("IsValid", flag);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            if (flag == true)
+                request.getSession().setAttribute("IsValid", userName);
+            response.sendRedirect("/order/menu.jsp");
 
         }
         if (type.equals("Register")) {

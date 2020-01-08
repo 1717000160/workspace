@@ -99,22 +99,23 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/order/images/food" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.test.Servlet" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\java\test3\web\order\images\food" />
+      <recent name="F:\java\test3\web\order" />
       <recent name="F:\java\test3\web" />
       <recent name="F:\java\test3\web\WEB-INF" />
       <recent name="F:\java\test3\web\css" />
-      <recent name="F:\java\test3\web\bootstrap" />
-      <recent name="F:\java\test3\web\WEB-INF\libs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -243,7 +244,14 @@
       <workItem from="1577512609035" duration="146000" />
       <workItem from="1577539434832" duration="8458000" />
       <workItem from="1577592411116" duration="7410000" />
-      <workItem from="1577624375588" duration="5089000" />
+      <workItem from="1577624375588" duration="6436000" />
+      <workItem from="1577798299925" duration="2918000" />
+      <workItem from="1577973694358" duration="4569000" />
+      <workItem from="1578034909255" duration="5047000" />
+      <workItem from="1578040259751" duration="9311000" />
+      <workItem from="1578124663460" duration="14249000" />
+      <workItem from="1578385743619" duration="1197000" />
+      <workItem from="1578493471050" duration="1085000" />
     </task>
     <servers />
   </component>

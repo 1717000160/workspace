@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>Restaurant Website Template</title>
+	<title>关于我们</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<!--[if IE 7]>
@@ -16,7 +16,7 @@
 	<div id="header"> <!-- start of header -->
 		<span class="signboard"></span>
 		<ul id="infos">
-			<li class="home">
+			<li class="home"> 
 				<a href="index.html">主页</a>
 			</li>
 			<li class="phone">
@@ -26,48 +26,57 @@
 				<a href="contact.html">空空</a>
 			</li>
 		</ul>
+
 		<a href="index.html" id="logo"></a>
-		<a href="menu.jsp" class="tagline"></a>
+		<ul id="navigation">
+			<li><a href="menu.jsp"><span>店长推荐</span></a></li>
+			<li class="main"><a href="menu.jsp"><span>主菜</span></a></li>
+			<li><a href="menu.jsp"><span>小吃</span></a></li>
+			<li><a href="menu.jsp"><span>饮品</span></a></li>
+		</ul> <!-- /#navigation -->
 	</div> <!-- end of header -->
-	
-	<div id="body"> <!-- start of content --> 
-		<ul id="featured"> <!-- start of featured -->
-			<li class="main">
-				<a href="menu.jsp"></a>
-			</li>
-			<li class="drinks">
-				<a href="menu.jsp"></a>
-			</li>
-			<li class="entree">
-				<a href="menu.jsp"></a>
-			</li>
-			<li class="desserts">
-				<a href="menu.jsp"></a>
-			</li>
-		</ul> <!-- end of featured -->
-	</div> <!-- end of content -->
+	<div id="contents"> <!-- start of contents --> 
+		<h2 class="aboutus"><span>关于我们</span></h2>
+		<div id="aboutus">
+			<h3>成立时间</h3>
+			<p>
+				空空
+			</p>
+			<h3>服务员</h3>
+			<p>
+				空空
+			</p>
+			<h3>厨师</h3>
+			<p>
+				空空
+			</p>
+			<h3>口碑</h3>
+			<p>
+				空空
+			</p>
+		</div>
+	</div> <!-- end of contents -->
+
 	<div id="footer"> <!-- start of footer -->
 		<ul class="advertise">
 			<li class="delivery">
 				<h2>Hungry? We Deliver</h2>
-				<a href="menu.jsp">Download our Menu</a>
 			</li>
 			<li class="event">
 				<h2>Party! Party!</h2>
-				<p>Celebrate your<br> Special Events with Us</p>
+				<p>Celebrate your</p>
+				<p>Special Events with Us</p>
 			</li>
 			<li class="connect">
 				<h2>Let's Keep in Touch</h2>
-				<a href="#" target="_blank" class="fb" title="Facebook"></a> 
-				<a href="#" target="_blank" class="twitr" title="Twitter"></a>
 			</li>
 		</ul>
 		<div>
 			<ul class="navigation">
-				<li class="selected"><a href="index.html">Home</a></li>
+				<li><a href="index.html">Home</a></li>
 				<li><a href="booking.html">Book an event</a></li>
 				<li><a href="blog.html">Blog</a></li>
-				<li><a href="about.html">About</a></li>
+				<li class="selected"><a href="about.html">About</a></li>
 				<li class="last"><a href="contact.html">Contact</a></li>
 			</ul>
 		</div>
