@@ -16,7 +16,7 @@ import java.util.SplittableRandom;
 public class OrderDao {
 
     public List getOrder() throws Exception {
-        String sql = "SELECT * FROM order";
+        String sql = "SELECT * FROM `order`";
         List<Object> list = new ArrayList<>();
         DBUtil db = new DBUtil();
 
@@ -62,7 +62,7 @@ public class OrderDao {
     }
 
     public void setOrder(Order order) throws Exception {
-        String sql = "INSERT INTO order(foodName,table_id, count, orderTime,totalPrice,orderStatus) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO `order`(foodName,table_id, count, orderTime,totalPrice,orderStatus) VALUES(?,?,?,?,?,?)";
         Connection con = null;
         DBUtil db = new DBUtil();
         List<Object> list = new ArrayList<>();

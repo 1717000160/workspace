@@ -1,6 +1,8 @@
 package com.Dao;
 
 import com.Model.Admin;
+import com.Model.Order;
+import com.Model.Users;
 import com.Util.DBUtil;
 
 import java.sql.Connection;
@@ -27,6 +29,27 @@ public class AdminDao {
         }
         db.closeCon();
         return flag;
+    }
+
+    public List<Users> getUser() throws Exception{
+        String sql = "SELECT * FROM users";
+        DBUtil db = new DBUtil();
+        List<Object> list = new ArrayList<>();
+
+        ResultSet rs = db.Query(sql, list);
+        List<Users> list1 = new ArrayList<>();
+        while(rs.next())
+        {
+            Users s = new Users();
+            s.setId(rs.getInt("id"));
+        s.setUserName(rs.getString("UserName"));
+        s.setEmail(rs.getString("email"));
+        s.setPassword(rs.getString("password"));
+        list1.add(s);
+    }
+
+        return list1;
+
     }
 
 }

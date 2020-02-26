@@ -8,11 +8,12 @@ public class Food {
     private String introduce;
     private String img;
 
-    public Food(String foodName, int foodType, float price, String introduce) {
+    public Food(String foodName, int foodType, float price, String introduce, String img) {
         this.foodName = foodName;
         this.foodType = foodType;
         this.price = price;
         this.introduce = introduce;
+        this.img = img;
     }
 
     public String getImg() {

@@ -1,5 +1,6 @@
 package com.Servlet;
 
+import com.Dao.FoodDao;
 import com.Dao.OrderDao;
 import com.Model.Order;
 
@@ -16,23 +17,31 @@ import java.text.SimpleDateFormat;
 public class OrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter("userName");
-        String foodName = request.getParameter("foodName");
-        int count = Integer.parseInt(request.getParameter("count"));
-        int tableId = Integer.parseInt(request.getParameter("table"));
-        float price = Float.parseFloat(request.getParameter("price"));
-        float totalPrice = price*count;
-        int status = 0;
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String time = df.toString();
-        Order order = new Order(foodName,  tableId,  count,  time,  totalPrice,  status);
-        OrderDao Dao = new OrderDao();
+        String foodId = request.getParameter("foodId");
+        FoodDao foodDao = new FoodDao();
+        String foodName = null;
         try {
-            Dao.setOrder(order);
-            request.getSession().setAttribute("IsValid", userName);
-            request.getRequestDispatcher("menu.jsp").forward(request, response);
+            foodName = foodDao.id2name(foodId);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        int count = Integer.parseInt(request.getParameter("count"));
+        int tableId = Integer.parseInt(request.getParameter("table"));
+        float price = Float.parseFloat(request.getParameter("price"));
+        float totalPrice = price * count;
+        int status = 0;
+        Date date = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String time = df.format(date);
+        Order order = new Order(foodName, tableId, count, time, totalPrice, status);
+        OrderDao Dao = new OrderDao();
+        try {
+            Dao.setOrder(order);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        request.getSession().setAttribute("IsValid", userName);
+        response.sendRedirect("/order/menu.jsp");
 
     }
 

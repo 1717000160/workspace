@@ -69,7 +69,7 @@
                     %>
                     <li>
                         <span class="price">¥<%=f.getPrice()%></span>
-                        <a href="detail.jsp?name=<%=userName%>&foodName=<%=f.getFoodName()%>"><%=f.getFoodName()%></a>
+                        <a href="detail.jsp?name=<%=userName%>&foodId=<%=f.getId()%>"><%=f.getFoodName()%></a>
                         <p><%=f.getIntroduce()%></p>
                     </li>
                     <%
@@ -87,7 +87,7 @@
                     %>
                     <li>
                         <span class="price">¥<%=f.getPrice()%></span>
-                        <a href="detail.jsp?name=<%=userName%>&foodName=<%=f.getFoodName()%>"><%=f.getFoodName()%></a>
+                        <a href="detail.jsp?name=<%=userName%>&foodId=<%=f.getId()%>"><%=f.getFoodName()%></a>
                         <p><%=f.getIntroduce()%></p>
                     </li>
                     <%
@@ -105,7 +105,7 @@
                     %>
                     <li>
                         <span class="price">¥<%=f.getPrice()%></span>
-                        <a href="detail.jsp?name=<%=userName%>&foodName=<%=f.getFoodName()%>"><%=f.getFoodName()%></a>
+                        <a href="detail.jsp?name=<%=userName%>&foodId=<%=f.getId()%>"><%=f.getFoodName()%></a>
                         <p><%=f.getIntroduce()%></p>
                     </li>
                     <%
@@ -123,7 +123,7 @@
                     %>
                     <li>
                         <span class="price">¥<%=f.getPrice()%></span>
-                        <a href="detail.jsp?name=<%=userName%>&foodName=<%=f.getFoodName()%>"><%=f.getFoodName()%></a>
+                        <a href="detail.jsp?name=<%=userName%>&foodId=<%=f.getId()%>"><%=f.getFoodName()%></a>
                         <p><%=f.getIntroduce()%></p>
                     </li>
                     <%

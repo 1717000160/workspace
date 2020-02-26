@@ -41,7 +41,7 @@ public class UserServlet extends HttpServlet {
                 }
 
                 request.getSession().setAttribute("IsAdmin", flag);
-                request.getRequestDispatcher("admin.jsp").forward(request, response);
+                request.getRequestDispatcher("/admin/index.jsp").forward(request, response);
             }
 
             Users user = new Users(userName, password, "0");
@@ -78,6 +78,24 @@ public class UserServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
+        }
+
+        if (type.equals("newUser")) {
+            String userName = request.getParameter("name");
+            String password = request.getParameter("password");
+            String email = request.getParameter("email");
+
+            Users user = new Users(userName, password, email);
+            UserDao userDao = new UserDao();
+            boolean flag = false;
+            try {
+                userDao.register(user);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            request.getSession().setAttribute("IsAdmin", "true");
+            response.sendRedirect("/admin/index.jsp");
         }
     }
 

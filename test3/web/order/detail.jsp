@@ -4,11 +4,11 @@
 
 <%
     String name = request.getParameter("name");
-    String foodName = request.getParameter("foodName");
-    foodName = new String(foodName.getBytes("iso-8859-1"), "UTF-8");
+    String foodId = request.getParameter("foodId");
+    //foodName = new String(foodName.getBytes("iso-8859-1"), "UTF-8");
     name = new String(name.getBytes("iso-8859-1"), "UTF-8");
     FoodDao foodDao = new FoodDao();
-    List<Food> list = foodDao.qFood(foodName);
+    List<Food> list = foodDao.qFood(foodId);
     Food f = list.get(0);
     out.print("Welcome:" + name);
 %>
@@ -17,7 +17,7 @@
 
 <html>
 <head>
-    <title><%=foodName%>介绍</title>
+    <title><%=f.getFoodName()%>介绍</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--[if IE 7]>
@@ -28,21 +28,6 @@
     <![endif]-->
 </head>
 <body>
-<span style="font-size:18px;color:#000000;"><script>
-							 function insc() {
-                                 var count = document.getElementById("count").innerHTML;
-                                 document.getElementById("count").innerHTML = parseInt(count) + 1;
-                             }
-
-                             function dec() {
-                                 var count = document.getElementById("count").innerHTML;
-                                 if (parseInt(count) > 0) {
-                                     document.getElementById("count").innerHTML = parseInt(count) - 1;
-                                 }
-                                 ;
-
-                             }
-						</script></span>
 <div id="header"> <!-- start of header -->
     <span class="signboard"></span>
     <ul id="infos">
@@ -65,54 +50,53 @@
     </ul> <!-- /#navigation -->
 </div> <!-- end of header -->
 <div id="contents"> <!-- start of contents -->
-    <h2><span><%=foodName%></span></h2>
+    <h2><span><%=f.getFoodName()%></span></h2>
     <div id="blogs">
         <div class="sidebar">
             <div class="posts">
                 <h3>参考图片</h3>
                 <ul>
-                    <li>
+                    <div>
                         <img src=<%=f.getImg()%>/>
-                    </li>
-					<form method="POST" action="/orderFood?userName=<%=name%>">
-						<li class="form-group">
-							<label for="foodName">餐品：</label>
+                    </div>
+                    <form method="POST"
+                          action="/orderFood?userName=<%=name%>&foodId=<%=f.getId()%>&price=<%=f.getPrice()%>">
+                        <div class="form-group">
+                            <label for="foodName">餐品：</label>
 
-							<label id="foodName" type="text" class="form-control" name="foodName" value=<%=foodName%>><%=foodName%></label>
-						</li>
+                            <label id="foodName" type="text" class="form-control" name="foodName"
+                                   value=<%=f.getFoodName()%>><%=f.getFoodName()%>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">单价：</label>
+                            <label id="price" type="text" class="form-control" name="price"
+                                   value=<%=f.getPrice()%>>￥<%=f.getPrice()%>
+                            </label>
+                        </div>
 
-                    <li>
-						<label id="price" type="text" class="form-control" name="price" value=<%=f.getPrice()%>>￥<%=f.getPrice()%></label>
-                    <li>
+                        <div class="form-group">
 
-                        <tr>
-                            <td>数量:</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-sm "
-                                        onclick="insc()">+
-                                </button>
-                                <button type="button" class="btn btn-sm"
-                                        id="count">1
-                                </button>
-                                <button type="button" class="btn btn-primary btn-sm "
-                                        onclick="dec()">-
-                                </button>
-                            </td>
-                        </tr>
-                    </li>
-                    <li for="table">桌号:
-                        <select id="table" name="table">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </li>
-                    <button type="submit" class="btn btn-primary btn-block">
-                        点餐
-                    </button>
+                            <label>数量:</label>
+                            <label>
+                                <input type="text" class="form-control"
+                                       id="count" name="count">
+                            </label>
+                        </div>
+                        <div class="form-group">桌号:
+                            <select id="table" name="table">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="form-group no-margin">
+                            <button type="submit" class="btn btn-primary btn-block">
+                                点餐
+                            </button>
+                        </div>
                     </form>
-                    </li>
                 </ul>
             </div>
 
